@@ -34,7 +34,6 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
             if (selectedIndex != index) {
               setState(() {
                 selectedIndex = index;
-                print('Drawer item $index tapped');
               });
             }
           },
