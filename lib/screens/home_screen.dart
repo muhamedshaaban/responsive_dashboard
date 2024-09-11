@@ -9,6 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color(0xffE5E5E5),
         body: AdaptiveLayout(
             mobileLayout: (context) => const SizedBox(),
             tabletLayout: (context) => const SizedBox(),

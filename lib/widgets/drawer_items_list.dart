@@ -26,29 +26,27 @@ class _DrawerItemsListViewState extends State<DrawerItemsListView> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-        itemCount: drawerItems.length,
-        itemBuilder: (context, index) {
-          return GestureDetector(
-            onTap: () {
-              if (selectedIndex != index) {
-                setState(() {
-                  selectedIndex = index;
-                  print('Drawer item $index tapped');
-                });
-              }
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: CustomDrawerItem(
-                drawerItemModel: drawerItems[index],
-                isActive: selectedIndex == index,
-              ),
+    return SliverList.builder(
+      itemCount: drawerItems.length,
+      itemBuilder: (context, index) {
+        return GestureDetector(
+          onTap: () {
+            if (selectedIndex != index) {
+              setState(() {
+                selectedIndex = index;
+                print('Drawer item $index tapped');
+              });
+            }
+          },
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: CustomDrawerItem(
+              drawerItemModel: drawerItems[index],
+              isActive: selectedIndex == index,
             ),
-          );
-        },
-      ),
+          ),
+        );
+      },
     );
   }
 }

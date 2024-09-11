@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashboard/utils/assets.dart';
 import 'drawer_items_list.dart';
+import 'setting_and_logout_drawer.dart';
 import 'user_info_list_tile.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -8,17 +9,41 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        UserInfoListTile(
-          title: 'Lekan Okeowo',
-          subtitle: 'demo@gmail.com',
-          image: Assets.imagesAvatar1,
-        ),
-        Divider(),
-        DrawerItemsListView(),
-        Spacer(),
-      ],
+    return Container(
+      color: Colors.white,
+      child: const CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: UserInfoListTile(
+              title: 'Lekan Okeowo',
+              subtitle: 'demo@gmail.com',
+              image: Assets.imagesAvatar1,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 8,
+            ),
+          ),
+          SliverToBoxAdapter(child: Divider()),
+          DrawerItemsListView(),
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                Expanded(
+                    child: SizedBox(
+                  height: 10,
+                )),
+                SettingAndLogoutDrawer(),
+                SizedBox(
+                  height: 48,
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
