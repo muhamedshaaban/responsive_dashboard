@@ -73,24 +73,7 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
       ],
     );
 
-    Row(
-      children: items.asMap().entries.map((e) {
-        int index = e.key;
-        var item = e.value;
-        return Expanded(
-          child: InkWell(
-            onTap: () {
-              updateIndex(index);
-            },
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12.0 : 0),
-              child: AllExpItem(
-                  isSelected: selectedIndex == index, itemModel: item),
-            ),
-          ),
-        );
-      }).toList(),
-    );
+
   }
 
   void updateIndex(int index) {
