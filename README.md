@@ -13,12 +13,6 @@ This project is a responsive dashboard built using Flutter. It includes various 
 - User authentication and profile management
 - Real-time data updates
 
-### Demo Video
-
-Watch the demo video below to see the project in action:
-
-![Demo Video](D:/flutter payment/Tharwat Samy/Dashboard.mp4)
-
 ## Installation
 
 To get started with this project, follow these steps:
