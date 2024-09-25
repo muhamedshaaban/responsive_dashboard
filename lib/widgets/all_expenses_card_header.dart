@@ -15,17 +15,26 @@ class AllExpItemHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          padding: const EdgeInsets.all(14),
-          width: 60,
-          height: 60,
-          decoration: ShapeDecoration(
-              shape: const OvalBorder(),
-              color: imageBackgroundColor ?? const Color(0xfffafafa)),
-          child: SvgPicture.asset(
-            image,
-            colorFilter: ColorFilter.mode(
-                imageColor ?? const Color(0xff4eb7f2), BlendMode.srcIn),
+        Flexible(
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(
+              maxWidth: 60,
+            ),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: Container(
+                decoration: ShapeDecoration(
+                    shape: const OvalBorder(),
+                    color: imageBackgroundColor ?? const Color(0xfffafafa)),
+                child: Center(
+                  child: SvgPicture.asset(
+                    image,
+                    colorFilter: ColorFilter.mode(
+                        imageColor ?? const Color(0xff4eb7f2), BlendMode.srcIn),
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
         Icon(

@@ -15,7 +15,7 @@ class QuickInvoiceTitlTextField extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppStyles.styleMedium16,
+          style: AppStyles.styleMedium16(context),
         ),
         const SizedBox(
           height: 8,
@@ -25,7 +25,7 @@ class QuickInvoiceTitlTextField extends StatelessWidget {
               filled: true,
               fillColor: const Color(0xffFAFAFA),
               hintText: hintText,
-              hintStyle: AppStyles.styleRegular16
+              hintStyle: AppStyles.styleRegular16(context)
                   .copyWith(color: const Color(0xffAAAAAA)),
               border: buildBorder(),
               enabledBorder: buildBorder(),

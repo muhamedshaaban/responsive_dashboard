@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 import '../utils/app_styles.dart';
@@ -7,7 +5,10 @@ import '../utils/app_styles.dart';
 class AllExpHeader extends StatelessWidget {
   const AllExpHeader({
     super.key,
+    required this.title,
   });
+
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -15,11 +16,11 @@ class AllExpHeader extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'All Expenses',
-          style: AppStyles.styleSemiBold16,
+          title,
+          style: AppStyles.styleSemiBold16(context),
         ),
         Container(
-          padding: const EdgeInsets.all(12),
+          padding: const EdgeInsets.all(16),
           decoration: ShapeDecoration(
             color: Colors.white,
             shape: RoundedRectangleBorder(
@@ -30,16 +31,16 @@ class AllExpHeader extends StatelessWidget {
               ),
             ),
           ),
-          child: const Row(
+          child: Row(
             children: [
               Text(
                 'Monthly',
-                style: AppStyles.styleMedium16,
+                style: AppStyles.styleMedium16(context),
               ),
-              SizedBox(
-                width: 12,
+              const SizedBox(
+                width: 18,
               ),
-              Icon(
+              const Icon(
                 Icons.keyboard_arrow_down_sharp,
                 color: Color(0xff064061),
               ),

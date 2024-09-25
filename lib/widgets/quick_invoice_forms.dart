@@ -17,6 +17,9 @@ class QuickInvoiceForms extends StatelessWidget {
                 hintText: 'Type customer name',
               ),
             ),
+            SizedBox(
+              width: 16,
+            ),
             Expanded(
               child: QuickInvoiceTitlTextField(
                 title: 'Customer email',
@@ -26,7 +29,7 @@ class QuickInvoiceForms extends StatelessWidget {
           ],
         ),
         SizedBox(
-          height: 16,
+          height: 24,
         ),
         Row(
           children: [
@@ -35,6 +38,9 @@ class QuickInvoiceForms extends StatelessWidget {
                 title: 'Item name',
                 hintText: 'Type item name',
               ),
+            ),
+            SizedBox(
+              width: 16,
             ),
             Expanded(
               child: QuickInvoiceTitlTextField(

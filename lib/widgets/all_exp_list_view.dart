@@ -36,37 +36,66 @@ class _AllExpensesItemsListViewState extends State<AllExpensesItemsListView> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      children: [
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              updateIndex(0);
+            },
+            child:
+                AllExpItem(isSelected: selectedIndex == 0, itemModel: items[0]),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              updateIndex(1);
+            },
+            child:
+                AllExpItem(isSelected: selectedIndex == 1, itemModel: items[1]),
+          ),
+        ),
+        const SizedBox(
+          width: 8,
+        ),
+        Expanded(
+          child: InkWell(
+            onTap: () {
+              updateIndex(2);
+            },
+            child:
+                AllExpItem(isSelected: selectedIndex == 2, itemModel: items[2]),
+          ),
+        )
+      ],
+    );
+
+    Row(
       children: items.asMap().entries.map((e) {
         int index = e.key;
         var item = e.value;
-
-        if (index == 1) {
-          return Expanded(
-            child: InkWell(
-              onTap: (){updateIndex(index);} ,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                child: AllExpItem(isSelected: selectedIndex == index, itemModel: item),
-              ),
+        return Expanded(
+          child: InkWell(
+            onTap: () {
+              updateIndex(index);
+            },
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12.0 : 0),
+              child: AllExpItem(
+                  isSelected: selectedIndex == index, itemModel: item),
             ),
-          );
-        } else {
-          return Expanded(
-            child: InkWell(
-              onTap: (){
-                updateIndex(index);
-              },
-              child: AllExpItem(isSelected: selectedIndex == index, itemModel: item)),
-          );
-        }
+          ),
+        );
       }).toList(),
     );
   }
-  void updateIndex(int index){
-  setState((){
-    selectedIndex = index;
-  });
-}
 
-
+  void updateIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 }

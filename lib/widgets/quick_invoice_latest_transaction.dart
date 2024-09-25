@@ -8,18 +8,18 @@ class QuickInvoiceLatestTransaction extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(height: 8),
+        const SizedBox(height: 24),
         Text(
           'Latest Transaction',
-          style: AppStyles.styleMedium16,
+          style: AppStyles.styleMedium16(context),
         ),
-        SizedBox(
-          height: 8,
+        const SizedBox(
+          height: 12,
         ),
-        QuickInvoiceTransactionListView()
+        const QuickInvoiceTransactionListView()
       ],
     );
   }
